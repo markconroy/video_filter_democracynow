@@ -13,7 +13,7 @@
    switch ($path) {
      case 'admin/help#video_filter_democracynow':
      $output = '';
-     $output .= '<p>' . t('Video Filter DemocracyNow allows you to embed videos from DemocrayNow on your website using the Video Filter module.');
+     $output .= '<p>' . t('Video Filter DemocracyNow allows you to embed videos from DemocracyNow on your website using the Video Filter module.');
      $output .= '<h3>' . t('How to use the module') . '</h3>';
      $output .= '<ul>';
      $output .= '<li>' . t('Enable the module as you would any Drupal module.') . '</li>';
