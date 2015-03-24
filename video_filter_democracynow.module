@@ -1,14 +1,12 @@
 <?php
 /**
  * @file
- * video_filter_democracynow codec module.
- *
- * Contains the implementation of hooks invoked by video_filter and
- * defines a new codec to allow content from DemocracyNow to be embedded.
+ * A codec module to allow DemocracyNow videos to be embedded using
+ * video filter module.
  */
 
  /**
-  * Implements hook_help()
+  * Implements hook_help().
   *
   */
  function video_filter_democracynow_help($path, $arg) {
