@@ -24,14 +24,6 @@ function video_filter_democracynow_codec_info() {
     'control_bar_height' => 0,
   );
 
-  $codecs['democracynow_segment'] = array(
-    'name' => t('DemocracyNow Segment'),
-    'sample_url' => 'http://www.democracynow.org/2014/7/7/exclusive_inside_embassy_refuge_julian_assange',
-    'callback' => 'video_filter_democracynow_segment',
-    'regexp' => '/([0-9]+)\/([0-9]+)\/([0-9]+)\/([a-zA-Z0-9@_\-]+)/',
-    'ratio' => 16 / 9,
-    'control_bar_height' => 0,
-  );
   return $codecs;
 }
 
@@ -41,17 +33,6 @@ function video_filter_democracynow_codec_info() {
  * @see video_filter_codec_info() in video_filter.codecs.inc for more info.
  */
 function video_filter_democracynow_fullshow($video) {
-  $video['source'] = 'http://www.democracynow.org/embed/show/' . $video['codec']['matches'][0];
-
-  return video_filter_iframe($video);
-}
-
-/**
- * Callback for DemocracyNow Segment codec.
- *
- * @see video_filter_codec_info() in video_filter.codecs.inc for more info.
- */
-function video_filter_democracynow_segment($video) {
   $video['source'] = 'http://www.democracynow.org/embed/show/' . $video['codec']['matches'][0];
 
   return video_filter_iframe($video);
