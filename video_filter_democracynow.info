@@ -1,0 +1,5 @@
+name = Video Filter DemocracyNow
+description = Filter allow the embedding of videos from DemocracyNow when using Video Filter
+core = 7.x
+dependencies[] = video_filter
+package = Input filters
