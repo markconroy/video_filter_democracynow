@@ -1,34 +1,33 @@
 <?php
 /**
  * @file
- * A codec module to allow DemocracyNow videos to be embedded using
- * video filter module.
+ * A module to allow DemocracyNow videos be embedded using video filter module.
  */
 
- /**
-  * Implements hook_help().
-  *
-  */
- function video_filter_democracynow_help($path, $arg) {
-   switch ($path) {
-     case 'admin/help#video_filter_democracynow':
-     $output = '';
-     $output .= '<p>' . t('Video Filter DemocracyNow allows you to embed videos from DemocracyNow on your website using the Video Filter module.');
-     $output .= '<h3>' . t('How to use the module') . '</h3>';
-     $output .= '<ul>';
-     $output .= '<li>' . t('Enable the module as you would any Drupal module.') . '</li>';
-     $output .= '<li>' . t('On the text formats page make sure Video Filter is switched on.') . '</li>';
-     $output .= '<li>' . t('In the list "Filter processing order", make sure video filter is after "Limit allowed HTML tags" and before "Convert URLs into links".') . '</li>';
-     $output .= '<li>' . t('If using the wysiwyg module, make sure you enable the video filter button on the wysiwyg profile that you wish to use it for.') . '</li>';
-     $output .= '</ul>';
-     return $output;
-   }
- }
+/**
+ * Implements hook_help().
+ *
+ */
+function video_filter_democracynow_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#video_filter_democracynow':
+    $output = '';
+    $output .= '<p>' . t('Video Filter DemocracyNow allows you to embed videos from DemocracyNow on your website using the Video Filter module.');
+    $output .= '<h3>' . t('How to use the module') . '</h3>';
+    $output .= '<ul>';
+    $output .= '<li>' . t('Enable the module as you would any Drupal module.') . '</li>';
+    $output .= '<li>' . t('On the text formats page make sure Video Filter is switched on.') . '</li>';
+    $output .= '<li>' . t('In the list "Filter processing order", make sure video filter is after "Limit allowed HTML tags" and before "Convert URLs into links".') . '</li>';
+    $output .= '<li>' . t('If using the wysiwyg module, make sure you enable the video filter button on the wysiwyg profile that you wish to use it for.') . '</li>';
+    $output .= '</ul>';
+    return $output;
+  }
+}
 
 /**
  * Implements hook_codec_info().
  *
- * @see video_filter_codec_info() in video_filter.codecs.inc for more info.
+ * @see video_filter_codec_info().
  */
 function video_filter_democracynow_codec_info() {
   $codecs = array();
@@ -48,7 +47,7 @@ function video_filter_democracynow_codec_info() {
 /**
  * Callback for DemocracyNow Fullshow codec.
  *
- * @see video_filter_codec_info() in video_filter.codecs.inc for more info.
+ * @see video_filter_codec_info().
  */
 function video_filter_democracynow_fullshow($video) {
   $video['source'] = 'http://www.democracynow.org/embed/show/' . $video['codec']['matches'][0];
